@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style/home.css">
+    <title>Document</title>
+</head>
+<body>
+    <% result.forEach(element=>{%>
+      <h1><%= element.type%></h1>
+      <h3><%= element.text%></h3>
+      <form action="/facts" method="POST">
+       <input type="hidden" name="type" value="<%= element.type%>">
+       <input type="hidden" name="text" value="<%= element.text%>">
+       <button type="submit">Add to fav</button>
+    </form>
+    <%})%>
+
+</body>
+</html>
